@@ -1,0 +1,1730 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	@font-face {
+  font-family: 'iconfont';
+  src: url('icon/iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+  url('icon/iconfont.woff') format('woff'),
+  url('icon/iconfont.ttf') format('truetype'),
+  url('icon/iconfont.svg#iconfont') format('svg');
+}
+	.iconfont{
+  font-family:"iconfont" !important;
+  font-size:32px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+	body{padding: 0px;margin: 0px;font-size: 12px;font-family: "微软雅黑 Light"; color: #666666; line-height: 2.0;background: #fff;}	
+	* {margin: 0; padding: 0; outline: none;}
+	ul,li,ol{list-style: none;}
+	.sidebar{background: #f2f2f2}
+	.suspend{width: 40xp; height: 326px; overflow: hidden; position: fixed; top: 140px !important;right: 0; z-index: 1003;background: #f2f2f2;border-radius: 10px 0 0 10px;animation:width 0.8s;}
+	.suspend ul li.sus_li1{background: url(imgs/y1.png)no-repeat 10px 30px; border-bottom: 1px solid #ccc;}
+	.suspend ul li.sus_li3{background: url(imgs/y3.png)no-repeat 10px 30px; border-bottom: 1px solid #ccc;}
+	.suspend ul li.sus_li4{background: url(imgs/y_55.png)no-repeat 10px 30px; border-bottom: 1px solid #ccc;}
+	.suspend ul li.sus_li5{background: url(imgs/y4.png)no-repeat 10px 30px; border-bottom: 1px solid #ccc;}
+	.suspend ul li{width: 0px; height: 80px; line-height: 80px;padding-left: 50px; font-size: 14px; display: block; cursor: pointer;}
+	.suspend:hover ul li{width:100px;transition:width 0.8s;}
+	.clear{clear: both}
+	
+	.header_top_box{height: 50px; background: #0066b3; width: 100%;}
+	.header_top_main{width: 980px; line-height: 50px; margin: 0 auto;}
+	.header_top_left{float: left;}
+	.header_top_left ul li.se{background: url(grjt.png)no-repeat bottom center;}
+	.header_top_left ul li{font-size: 16px; float: left; color: #fff; margin-right: 12px; position: relative;}
+	a{text-decoration: none; color: #333333;}
+	a img{border: 0;}
+	.header_top_left ul li.se a {color: #fff;}
+	.header_top_left ul li a{color: #1dd9e2}
+	.business{position: relative;height: 1px;}
+	.business img{position: absolute; top: 14px;border: none; margin: 0;padding: 0;}
+	.business_text{position: absolute; left: 77px;top: 11px;width: 141px; height: 28px; line-height: 26px; background: url(imgs/hv_top.png);text-align: center;display: none;}
+	.header_top_left ul li div.business_text a{color: #27fff7; margin: 0 5px; font-size: 12px;}
+	.business a{background: #0066b3}
+	.business:hover .business_text{display: block;}
+	.header_top_right{float: right}
+	.header_top_right ul li.padding_13{padding: 0 4px;}
+	.header_top_right ul li{float: left;margin-left: 8px; font-size: 14px;}
+	.header_top_right_a{color: #1dd9e2}
+	.header_top_right ul li img{vertical-align: text-bottom; margin-right: 8px;}
+	.header_box{width: 100%;height: auto;}
+	.header{clear: both;width: 980px;margin: 0 auto; height: 81px; position: relative;z-index: 11;}
+	.logo{float: left; width: 200px; height: 40px; padding-top: 21px; padding-right: 16px;}
+	.chengshixuanze{width: 72px;height: 38px; float: left; margin-top: 28px; position: relative; z-index: 999;}
+	.select-city{background: url(imgs/city_bg.jpg) no-repeat left top; width: 68px; height: 24px; line-height: 25px; padding-left: 4px;left: -6px; position: relative;float: left;}
+	.nav{float: left; padding-top: 24px; padding-left: 6px;}
+	.nav ul li{float: left; font-size: 18px; display: inline-block; color: #666666;}
+	.nav ul li a.nav_a{color: #333; cursor: default; padding: 0 14px; padding-bottom: 10px; display: inline-block;}
+	.nav .nav_a{padding: 0px 2px; font-size: 18px;font-weight: bold}
+	.search_tow{position: absolute;right: 0 ;top: 22px;}
+	.search_nav_line{height: 38px; line-height: 38px; background: #eeeeee; width: 1px; float: left;margin-right: 10px;}
+	.iconfont{width: 41px; height: 38px;line-height: 38px; display: block;float: left; margin-left: 4px;}
+	.nav_a:hover{background: #3390FF;}
+	.iconfont:hover{background: #3390FF; color: #FFFFFF}
+	
+	.banner{height: 350px;width: 100%; position: relative; z-index: 9;}
+	.topbg{background: url(imgs/shadow.png) repeat-x left top; height: 4px;position: absolute;top: 0; left: 0; z-index: 10; width: 100%;}
+	.focus{position: relative; width: 100%; height: 350px; background-color: #fff;float: left}
+	.focus .fpic{position: absolute;left: 0px;top: 0px;width: 100%;}
+	.fcon{position: relative; width: 100%; float: left;background: #fff}
+	.focus .fcon a {display: block; width: 960px; height: 350px; margin: 0 auto;}
+	.banner_pic{filter:alpha(opacity=90); opacity: 0.9; background: url(imgs/8949_1_1501059757.jpg) no-repeat 50% 0%;}
+	
+	.index_scroll{width: 960px; padding-top: 40px; margin: 0 auto 60px auto; position: relative;height: 104px;}
+	.index_scroll_left { position: absolute;left: -25px; top: 50%; z-index: 999;}
+	.index_scroll_left, .index_scroll_right, .index_scroll_left a, .index_scroll_right a{width: 21px; height: 27px;}
+	.index_scroll_right {position: absolute; right: -25px; top: 50%; z-index: 999;}
+	.index_scroll_left a { background: url(imgs/icon_left.png)no-repeat;display: block;}
+	.index_scroll_right_a_hover a {background: url(imgs/icon_right.png) no-repeat;display: block;}
+	.index_scroll_box {width: 972px;position: relative; height: 120px; overflow: hidden;}
+	.index_scroll_main {position: absolute; width: 2000px;}
+	.index_scroll_main ul li {width: 231px; float: left; margin-right: 12px; position: relative;}
+	.index_scroll_top {overflow: hidden; padding-bottom: 20px;}
+	.index_scroll_icon {float: left; width: 55px; height: 55px;    display: block;}
+	.index_scroll_text {float: left; width: 169px; overflow: hidden; white-space: nowrap;    display: block;}
+	.index_scroll_title {font-size: 18px; line-height: 2.0;    display: block;}
+	.index_scroll_title a {color: #333;}
+	.index_scroll_value {line-height: 14px; width: 170px; overflow: hidden;}
+	.index_scroll_bottom {z-index: 12; background: #e9e9e9 url(up_icon.png) no-repeat 67% center; color: #333; border-radius: 5px; width: 211px; height: 29px; line-height: 29px; text-align: center;font-size: 16px; padding-right: 20px; cursor: pointer;}
+	.vcc-index_title_box_1 {border-bottom: none;position: relative;}
+	.vcc-index_title_box {overflow: hidden; display: block;}
+	.vcc-index_title {display: block; width: 960px; margin: 0 auto; height: 46px; line-height: 32px; font-size: 30px; overflow: hidden;}
+	.vcc-index_title_a {display: block;float: left; padding-right: 11px; border-left: 10px solid #c1c1c1; padding-left: 10px; color: #333;}
+	.vcc-index_title_box2 {background: url(imgs/index_title_box.gif); width: 308px; height: 32px; line-height: 32px; padding-left: 11px; float: left; font-size: 14px; padding-bottom: 21px; color: #fff;}
+	.vcc-index_tab{border-bottom: 2px solid #efefef; width: 100%; margin-bottom: 21px;}
+	.vcc-index_tab_main{width: 960px; margin: 0 auto; height: 39px;}
+	.vcc-index_tab_main ul{float: right}
+	.vcc-index_tab_main ul li.se{border-bottom: 4px solid #0066b3;}
+	.vcc-index_tab_main ul li.se a{color: #0066b3;}
+	.vcc-index_tab_main ul li {float: left; padding: 0 18px; height: 38px; line-height: 38px;}
+	<vcc-index_tab_main ul li a{font-size: 18px; display: block;width: 100%; height: 100%; text-align: center; color: #333; cursor: default;}
+	
+	.vcc-index_tab_main_div { width: 100%;}
+	.vcc-index_tab_main_div_div {width: 960px; margin: 0 auto; overflow: hidden; display: none;}
+	.index_tab_left {float: left; width: 590px; height: 360px; margin-bottom: 20px;}
+	.index_tab_left_top {overflow: hidden; padding: 20px 0;}
+	.index_tab_left_top_li {width: 147px; float: left;}
+	.k1_tit {font-size: 18px; line-height: 2.0; position: relative;}
+	.k1_con ul li {line-height: 1.5; font-size: 14px; color: #666;}
+	.index_tab_left_bottom {padding-top: 13px;}
+	.index_tab_left1, .index_tab_right1 {width: 280px; height: 210px; float: left; position: relative;}
+	.adsame{width: 280px; height: 210px; border: none; padding: 0px; margin: 0px; overflow: hidden;   position: relative;}
+	.index_tab_right1 {float: right;}
+	
+	.vcc-index_tab_main_div {width: 100%;}
+	.index_x_banner2 {height: 100px;}
+	.index_x_banner {width: 100%; height: 150px; background: #efefef; margin-bottom: 60px;}	
+	.index_x_banner_main {width: 960px; margin: 0 auto;}
+	.index_x_banner2 div.index_x_banner_main ul li.index_x_banner_main_title {padding-top: 22px;}
+	.index_x_banner_main ul li.index_x_banner_main_title {padding: 43px 20px 0px 0px; width: auto;}
+	.index_x_banner_main ul li {float: left; width: 282px;}
+	.index_x_banner_main ul li a.index_x_banner_main_img_left2 {padding-top: 19px;}
+	.index_x_banner_main ul li a.index_x_banner_main_img_left {display: block; float: left; padding-top: 20px;}
+	.index_x_banner_main_box2 {padding-top: 39px;}
+	.index_x_banner_main_box {float: left; padding-top: 29px; padding-left: 13px;}
+	.index_x_banner_main_box a.index_x_banner_main_box_value {font-size: 14px;line-height: 33px; cursor: pointer; color: #333;}	
+	
+	.yxsh_box_main {width: 960px;overflow: hidden; margin: 0 auto; padding-top: 30px;}
+	.yxsh_box_main_left {float: left; width: 510px;}
+	.yxsh_box_main_right { float: right; width: 420px;}
+	.yxsh_box_main_right ul li.yxsh_icon_1 {background: url(imgs/gyzx_01.png) left 12px no-repeat;}
+	.yxsh_box_main_right ul li {padding-top: 9px; padding-bottom: 9px; padding-left: 60px;}
+	.yxsh_box_main_right ul li a.yxsh_box_main_right_title {font-size: 18px; color: #333;line-height: 2.0;display: block;}
+	.yxsh_box_main_right ul li span.yxsh_box_main_right_text { font-size: 14px; color: #666;line-height: 1.5;overflow: hidden}
+	.yxsh_box_main_right ul li.yxsh_icon_2 {background: url(imgs/gyzx_02.png) left 10px no-repeat;}
+	.yxsh_box_main_right ul li.yxsh_icon_3 {background: url(imgs/gyzx_03.png) left 10px no-repeat;}
+	.index_x_banner_main_box a {display: block; line-height: 22px; color: #333; font-size: 14px;}
+	.yzgh_box { width: 100%;}	
+	.plan-con {overflow: hidden; width: 960px; margin:0 auto; margin-bottom: 60px; padding-top: 20px;}
+	.plan-left { width: 460px; float: left; padding-left: 20px;}
+	.plan-desc { width: 200px;}
+	.fl {  float: left; display: inline;}
+	.plan-desc h2 {font-size: 24px; color: #333; font-weight: normal;}
+	.plan-desc p { font-size: 14px; color: #666; padding-top: 16px; padding-bottom: 24px; line-height: 1.5em; min-height: 80px;}
+	.plan-btn { width: 117px; height: 30px; line-height: 30px; text-align: center; background: url(imgs/btn.png) 0 -140px no-repeat; padding-left: 3px;}
+	.plan-desc a { display: block; color: #fff; font-size: 14px;}
+	.plan-right { width: 480px; float: right;}
+	.fr { float: right; display: inline;}
+	.difference{width: 960px; margin: 0 auto 60px auto; position: relative;}
+	.differnce_title{color: #FF9900; font-size: 24px; text-align: center; background: url(imgs/line2.png)no-repeat center bottom; padding-bottom: 30px; line-height: 1.0;}
+	.difference .button_left{left: 206px; top: 77px;}
+	.difference .button_right{right: 206px; top: 77px;}
+	.yes_to_go_left{position: absolute; width: 20px; height: 30px; background: url(imgs/arrow.png) no-repeat 0px 0px;cursor: pointer}
+	.yes_to_go_right{position: absolute; width: 20px; height: 30px; background: url(imgs/arrow.png) no-repeat -22px 0px;cursor: pointer}
+	.difference_detail{width: 470px;height: 80px; overflow: hidden; margin: auto; position: relative;}
+	.difference_detail ul{width: 1000px; position: absolute;}
+	.difference_detail ul li{width: 471px; float: left;}
+	.difference_detail ul li h2{font-size: 14px;text-align: center; color: #333;}
+	.difference_detail ul li p{font-size: 14px; color: #666;display: block;}
+	
+	.Announcement{width: 100%; background: #eeeeee; padding-bottom: 40px;}
+	.Announcement_main{width: 960px; margin: 0 auto;}
+	.clearfix{zoom: 1;}
+	.Announcement_title{font-size: 18px; color: #333333; margin: 0 auto; line-height: 80px;}
+	.Announcement_title a{color: #333}
+	.Announcement_ul ul li {width: 33%; float: left;}
+	.Announcement_date{width: 35px; float: left;}
+	.Announcement_day{font-size: 18px; color: #333; line-height: 22px; text-align: center; border-bottom: 1px solid #bfbfbf;}
+	.Announcement_manth{font-size: 12px; color: #333; line-height: 18px; text-align: center;}
+	.Announcement_text_box{float: left; width: 238px; padding-left: 10px;}
+	.Announcement_text_title{font-size: 18px; color: #333; text-align: left; line-height: 22px; height: 44px;}
+	.Announcement_value{margin-top: 10px; font-style: 14px; color: #666; text-align: left; line-height: 1.5; min-height: 54px;}
+	.footer{width: 100%; height: 210px;}
+	.footer_links{width: 100%; height: 50px;line-height: 50px; background: #025a9d;}
+	.footer_link_main{width: 960px; margin: 0 auto;overflow: hidden; height: 50px;}
+	.footer_link_main .footerr_links_img{float: left; padding-top: 8px; width: 110px; display: block;}
+	.footer_link_main a{color: #1dd9e2; font-size: 14px;}
+	.footerr_links_img img{ width: 94px;}
+	.footer_link_main ul{float: left; width: 713px; overflow: hidden; margin-left: 8px;}
+	.footer_link_main ul li{float: left;padding-right: 18px;}
+	.footer_link_main .Language_select{float: right; width: 115px; text-align: right; color: #1dd9e2;}
+	.copy-right{width: 100%; height: 160px;background: #0066b3;}
+	.copy-right_main{width: 960px; margin: 0 auto;}
+	.copy-right_left{float: 0; font-size: 14px; color: #fff; padding-top: 48px;}
+	.copy-right_img{width: 22px; height: 28px; float: left; padding-right: 20px; padding-top: 10px;}
+	.copy-right_text{float: left;}
+	.copy-right_left span{padding-right: 25px; line-height: 2.0;}
+	.copy-right_right{float: right;}
+	.copy-right_right ul{overflow: hidden;}
+	.copy-right_right ul li{float: left;background: #fff; width: 60px; padding: 5px; margin-left: 34px; text-align: center; color: #0066b3;line-height: 15px;}
+	.k1_tit a:hover{color:#0066b3 }
+	.index_x_banner_main_box a:hover{color:#0066b3}
+	.yxsh_box_main_right ul li a:hover{color:#0066b3}
+	.difference_detail ul li a:hover{color:#0066b3}
+	.Announcement_title a:hover{color:#0066b3}
+	.Announcement_text_title a:hover{color:#0066b3}
+	.footer_link_main ul li a:hover{color:#fff}
+	.Language_select a:hover{color:#fff}
+	.plan-btn:hover{background: #27A5F5}
+	.nav ul li a:hover{color: #fff}
+	.header_top_right ul li a:hover{color: #fff;}
+	.header_top_left ul li a:hover{color: #fff;}
+	
+	.mnavl{display: block; width: 960px; position: absolute; box-shadow: 1px 3px 6px #6c7870;-webkit-box-shadow: 1px 3px 6px #6c7870; top: 67px; left: 0; z-index: 99999; background: #f8f8f8; color: #333; cursor: auto; font-size: 14px;height: 0px;overflow: hidden;}
+	.mnavL_info{position: relative; width: 960px;border-top: 2px solid #1693f1; }
+	.clearfix {zoom: 1;}
+	.mnavl .mnavL_left{width: 738px; border-right: 1px solid #d8d8d8; min-height: 310px;}
+	.tz_1{padding-top: 20px; padding-left: 118px; height: 30px; line-height: 30px;}
+	table{border-collapse: collapse; border-spacing: 0;}
+	table.cell{table-layout: fixed;}
+	.cell{text-align: left}
+	tbody{display: table-row-group; vertical-align: middle; border-color: inherit;}
+	tr{display: table-row; vertical-align: inherit; border-color: inherit;}
+	.mnavl .cell .tz_td2{width: 246px; overflow: hidden;}
+	.mt_td1{width: 30px; font-size: 14px; font-weight: normal;padding-top: 6px;}
+	.mt_td2{font-size: 14px; font-weight: normal; color: #1693f1;}
+	.mnavl .cell .tz-td3{width: 246px; overflow: hidden;}
+	.mnavl .cell .tz-td4{width: 108px; overflow: hidden;}
+	.nav_two_1{float: left; font-size: 14px; padding-left: 10px; width: 108px; line-height: 46px;}
+	.nav_two_1 a{color: #4b85c5;}
+	.fl{ float: left; display: inline;}
+	.mn_box{margin-right: 39px;width: 216px; padding-left: 0}
+	.m_box_info{padding-top: 0px;}
+	.m_box_info table tr td{text-align: left; height: 50px; position: relative; width: 108px;}
+	.m_box_info table tr td a{color: #333333; font-size: 14px; width: 98px; overflow: hidden; white-space: nowrap;}
+	.mn_box3{width: 108px; margin-right: 0px;padding-left: 0px;}
+	.mnavl .mnavL_right{width: 221px; padding-top: 26px; text-align: center;}
+	.m_r_f_img2{position: absolute; top: 20px;right: 20px;}
+	.m_r_f_img2 img{width: 186px;}
+	.nm_bottom{width: 960px; height: 50px; line-height: 50px; background: #e5e5e5; overflow: hidden}
+	.nm_bottom ul li.bott_li{float: left; width: 854; font-size: 12px; text-align: left; height: 50px; overflow: hidden;padding: 0 36px;}
+	.bott_li dl{float: left; width: 2000px; display: inline-block; overflow: hidden; white-space: nowrap; word-break: break-all;}
+	.bott_li dl dd{float: left; width: 20px; margin-right: 2px;}
+	.bott_li dl dt{float: left; margin-right: 60px;}
+	.bott_li dl dd img{float: left; vertical-align: middle; margin-top: 18px;}
+	.m_box_info tr td a:hover{color: #0066b3}
+	.nm_bottom ul li dl dt a:hover{color: #0066b3}
+	.nav ul li:hover .mnavl{height: 362px; transition: height 0.2s linear 0.5s }
+	</style>
+</head>
+
+<body>
+<div class="sidebar">
+	<div class="suspend susp_nav" id="suspend" style=" display: block;">
+		<ul>
+		<li class="sus_li1">我的.com</li>
+		<li class="sus_li3">优惠直通</li>
+		<li class="sus_li4">分行推荐</li>
+		<li class="sus_li5">快速帮助</li>
+		</ul>
+	</div><div class="clear"></div>
+</div>
+<div class="header_top_box">
+	<div class="header_top_main">
+		<div class="header_top_left">
+			<ul>
+				<li class="se"><a href="#">个人客户</a></li>
+				<li><a href="#">私人银行</a></li>
+				<li><a href="#">公司机构</a></li>
+				<li><a href="#">小微企业</a></li>
+				<li class="business_box">
+					<div class="business">
+						<span><img src="imgs/sr_icon.png"/></span>
+						<div class="business_text">
+						<a href="#">个人商城</a> 
+						<a href="#">企业商城</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="header_top_right">
+			<ul>
+			  <li class="padding_13 header_top_right_a">客服热线：95533</li>
+			  <li><a class="header_top_right_a" href="#"><img src="imgs/zx_icon.png"/>在线客服</a></li>
+			  <li class="padding_13 header_top_right_a">|</li>
+			  <li><a href="#" class="padding_13 header_top_right_a">建行集团</a></li>
+			  <li><a href="#" class="padding_13 header_top_right_a">国内分行</a></li>
+			  <li><a href="#" class="padding_13 header_top_right_a">网点及ATM</a></li>
+			</ul>
+		</div>
+	</div><div class="clear"></div>
+</div>
+<div class="header_box">
+	<div class="header">
+		<div class="logo">
+			<a href="#"><img src="imgs/20151201084052927594.png" alt="中国建设银行"/></a>
+		</div>
+		<div class="chengshixuanze">
+			<div class="select-city">
+			<a href="#" class="toggle_btn pointer">北京市</a></div>
+		</div>
+		<div class="nav">
+			<ul>
+				<li style="margin-left: -2.57143px;">
+					<a href="#" class="nav_a">信用卡</a>
+					<div class="mnavl">
+						<div class="mnavL_info">
+							<div class="mnavL_left fl">
+								<div class="tz_1">
+									<table class="cell" width="100%">
+										<tbody>
+											<tr>
+												<td class="tz_td2">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m1.png"/></td>
+																<td class="mt_td2">业务办理</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+												<td class="tz-td3">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m2.png"/></td>
+																<td class="mt_td2">人气产品</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+												<td class="tz-td4">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m3.png"/></td>
+																<td class="mt_td2">热门推荐</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="nav_two_1">
+									<a href="#">信用卡 &gt;</a>
+								</div>
+								<div class="mn_box fl mn_box1">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">信用卡申请</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">办卡进度查询</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">在线开卡
+														<span class="hot"><img src="imgs/hot.png"></span></a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">积分商城
+														<span class="hot"><img src="imgs/hot.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">账单查询</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">分期理财</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">额度调整</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">在线挂失</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="mn_box fl mn_box2">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">龙卡热购卡
+														<span><img src="imgs/new.png"></span></a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">全球支付信用卡</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">欧洲旅行信用卡</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">EMV信用卡
+														<span class="new"><img src="imgs/new.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">日本旅行信用卡</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">更多</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="mn_box fl mn_box3">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">龙卡星期六
+														<span class="new"><img src="imgs/new.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">家庭挚爱 月...</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">海底捞200减60</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">更多特惠活动</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="mnavL_right fr">
+							  <div class="m_r_f_img2">
+									<a href="#"><img src="imgs/5804_1_1495002436.jpg"/></a>
+							  </div>
+							</div><div class="clear"></div>
+							<div class="nm_bottom">
+								<ul>
+									<li class="bott_li bott_li_1">
+										<dl>
+											<dd><img src="imgs/b1.png"></dd>
+											<dt><a href="#">信用卡章程</a></dt>
+											<dd><img src="imgs/b2.png"></dd>
+											<dt><a href="#">还款方式</a></dt>
+											<dd><img src="imgs/b3.png"></dd>
+											<dt><a href="#">常见问题</a></dt>
+											<dd><img src="imgs/b4.png"></dd>
+											<dt><a href="#">收费标准</a></dt>
+										</dl>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li style="margin-left: -2.57143px;">
+					<a href="#" class="nav_a">投资理财</a>
+					<div class="mnavl">
+						<div class="mnavL_info">
+							<div class="mnavL_left fl">
+								<div class="tz_1">
+									<table class="cell" width="100%">
+										<tbody>
+											<tr>
+												<td class="tz_td2">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m1.png"/></td>
+																<td class="mt_td2">业务办理</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+												<td class="tz-td3">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m2.png"/></td>
+																<td class="mt_td2">人气产品</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+												<td class="tz-td4">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m3.png"/></td>
+																<td class="mt_td2">热门推荐</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="nav_two_1">
+									<a href="#">信用卡 &gt;</a>
+								</div>
+								<div class="mn_box fl mn_box1">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">信用卡申请</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">办卡进度查询</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">在线开卡
+														<span class="hot"><img src="imgs/hot.png"></span></a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">积分商城
+														<span class="hot"><img src="imgs/hot.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">账单查询</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">分期理财</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">额度调整</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">在线挂失</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="mn_box fl mn_box2">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">龙卡热购卡
+														<span><img src="imgs/new.png"></span></a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">全球支付信用卡</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">欧洲旅行信用卡</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">EMV信用卡
+														<span class="new"><img src="imgs/new.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">日本旅行信用卡</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">更多</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="mn_box fl mn_box3">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">龙卡星期六
+														<span class="new"><img src="imgs/new.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">家庭挚爱 月...</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">海底捞200减60</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">更多特惠活动</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="mnavL_right fr">
+							  <div class="m_r_f_img2">
+									<div>
+										<a href="#"><img src="imgs/5804_1_1495002436.jpg"/></a>
+								  </div>
+							  </div>
+							</div><div class="clear"></div>
+							<div class="nm_bottom">
+								<ul>
+									<li class="bott_li bott_li_1">
+										<dl>
+											<dd><img src="imgs/b1.png"></dd>
+											<dt><a href="#">信用卡章程</a></dt>
+											<dd><img src="imgs/b2.png"></dd>
+											<dt><a href="#">还款方式</a></dt>
+											<dd><img src="imgs/b3.png"></dd>
+											<dt><a href="#">常见问题</a></dt>
+											<dd><img src="imgs/b4.png"></dd>
+											<dt><a href="#">收费标准</a></dt>
+										</dl>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li style="margin-left: -2.57143px;">
+					<a href="#" class="nav_a">存贷及银行卡</a>
+					<div class="mnavl">
+						<div class="mnavL_info">
+							<div class="mnavL_left fl">
+								<div class="tz_1">
+									<table class="cell" width="100%">
+										<tbody>
+											<tr>
+												<td class="tz_td2">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m1.png"/></td>
+																<td class="mt_td2">业务办理</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+												<td class="tz-td3">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m2.png"/></td>
+																<td class="mt_td2">人气产品</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+												<td class="tz-td4">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m3.png"/></td>
+																<td class="mt_td2">热门推荐</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="nav_two_1">
+									<a href="#">信用卡 &gt;</a>
+								</div>
+								<div class="mn_box fl mn_box1">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">信用卡申请</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">办卡进度查询</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">在线开卡
+														<span class="hot"><img src="imgs/hot.png"></span></a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">积分商城
+														<span class="hot"><img src="imgs/hot.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">账单查询</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">分期理财</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">额度调整</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">在线挂失</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="mn_box fl mn_box2">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">龙卡热购卡
+														<span><img src="imgs/new.png"></span></a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">全球支付信用卡</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">欧洲旅行信用卡</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">EMV信用卡
+														<span class="new"><img src="imgs/new.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">日本旅行信用卡</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">更多</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="mn_box fl mn_box3">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">龙卡星期六
+														<span class="new"><img src="imgs/new.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">家庭挚爱 月...</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">海底捞200减60</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">更多特惠活动</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="mnavL_right fr">
+							  <div class="m_r_f_img2">
+									<div>
+										<a href="#"><img src="imgs/5804_1_1495002436.jpg"/></a>
+								  </div>
+							  </div>
+							</div><div class="clear"></div>
+							<div class="nm_bottom">
+								<ul>
+									<li class="bott_li bott_li_1">
+										<dl>
+											<dd><img src="imgs/b1.png"></dd>
+											<dt><a href="#">信用卡章程</a></dt>
+											<dd><img src="imgs/b2.png"></dd>
+											<dt><a href="#">还款方式</a></dt>
+											<dd><img src="imgs/b3.png"></dd>
+											<dt><a href="#">常见问题</a></dt>
+											<dd><img src="imgs/b4.png"></dd>
+											<dt><a href="#">收费标准</a></dt>
+										</dl>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li style="margin-left: -2.57143px;">
+					<a href="#" class="nav_a">电子银行</a>
+					<div class="mnavl">
+						<div class="mnavL_info">
+							<div class="mnavL_left fl">
+								<div class="tz_1">
+									<table class="cell" width="100%">
+										<tbody>
+											<tr>
+												<td class="tz_td2">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m1.png"/></td>
+																<td class="mt_td2">业务办理</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+												<td class="tz-td3">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m2.png"/></td>
+																<td class="mt_td2">人气产品</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+												<td class="tz-td4">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m3.png"/></td>
+																<td class="mt_td2">热门推荐</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="nav_two_1">
+									<a href="#">信用卡 &gt;</a>
+								</div>
+								<div class="mn_box fl mn_box1">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">信用卡申请</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">办卡进度查询</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">在线开卡
+														<span class="hot"><img src="imgs/hot.png"></span></a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">积分商城
+														<span class="hot"><img src="imgs/hot.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">账单查询</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">分期理财</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">额度调整</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">在线挂失</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="mn_box fl mn_box2">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">龙卡热购卡
+														<span><img src="imgs/new.png"></span></a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">全球支付信用卡</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">欧洲旅行信用卡</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">EMV信用卡
+														<span class="new"><img src="imgs/new.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">日本旅行信用卡</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">更多</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="mn_box fl mn_box3">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">龙卡星期六
+														<span class="new"><img src="imgs/new.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">家庭挚爱 月...</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">海底捞200减60</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">更多特惠活动</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="mnavL_right fr">
+							  <div class="m_r_f_img2">
+									<div>
+										<a href="#"><img src="imgs/5804_1_1495002436.jpg"/></a>
+								  </div>
+							  </div>
+							</div><div class="clear"></div>
+							<div class="nm_bottom">
+								<ul>
+									<li class="bott_li bott_li_1">
+										<dl>
+											<dd><img src="imgs/b1.png"></dd>
+											<dt><a href="#">信用卡章程</a></dt>
+											<dd><img src="imgs/b2.png"></dd>
+											<dt><a href="#">还款方式</a></dt>
+											<dd><img src="imgs/b3.png"></dd>
+											<dt><a href="#">常见问题</a></dt>
+											<dd><img src="imgs/b4.png"></dd>
+											<dt><a href="#">收费标准</a></dt>
+										</dl>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li style="margin-left: -2.57143px;">
+					<a href="#" class="nav_a">悦享生活</a>
+					<div class="mnavl">
+						<div class="mnavL_info">
+							<div class="mnavL_left fl">
+								<div class="tz_1">
+									<table class="cell" width="100%">
+										<tbody>
+											<tr>
+												<td class="tz_td2">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m1.png"/></td>
+																<td class="mt_td2">业务办理</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+												<td class="tz-td3">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m2.png"/></td>
+																<td class="mt_td2">人气产品</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+												<td class="tz-td4">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m3.png"/></td>
+																<td class="mt_td2">热门推荐</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="nav_two_1">
+									<a href="#">信用卡 &gt;</a>
+								</div>
+								<div class="mn_box fl mn_box1">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">信用卡申请</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">办卡进度查询</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">在线开卡
+														<span class="hot"><img src="imgs/hot.png"></span></a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">积分商城
+														<span class="hot"><img src="imgs/hot.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">账单查询</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">分期理财</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">额度调整</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">在线挂失</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="mn_box fl mn_box2">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">龙卡热购卡
+														<span><img src="imgs/new.png"></span></a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">全球支付信用卡</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">欧洲旅行信用卡</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">EMV信用卡
+														<span class="new"><img src="imgs/new.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">日本旅行信用卡</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">更多</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="mn_box fl mn_box3">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">龙卡星期六
+														<span class="new"><img src="imgs/new.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">家庭挚爱 月...</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">海底捞200减60</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">更多特惠活动</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="mnavL_right fr">
+							  <div class="m_r_f_img2">
+									<div>
+										<a href="#"><img src="imgs/5804_1_1495002436.jpg"/></a>
+								  </div>
+							  </div>
+							</div><div class="clear"></div>
+							<div class="nm_bottom">
+								<ul>
+									<li class="bott_li bott_li_1">
+										<dl>
+											<dd><img src="imgs/b1.png"></dd>
+											<dt><a href="#">信用卡章程</a></dt>
+											<dd><img src="imgs/b2.png"></dd>
+											<dt><a href="#">还款方式</a></dt>
+											<dd><img src="imgs/b3.png"></dd>
+											<dt><a href="#">常见问题</a></dt>
+											<dd><img src="imgs/b4.png"></dd>
+											<dt><a href="#">收费标准</a></dt>
+										</dl>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					</li>
+				<li style="margin-left: -2.57143px;">
+					<a href="#" class="nav_a">优智规划</a>
+					<div class="mnavl">
+						<div class="mnavL_info">
+							<div class="mnavL_left fl">
+								<div class="tz_1">
+									<table class="cell" width="100%">
+										<tbody>
+											<tr>
+												<td class="tz_td2">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m1.png"/></td>
+																<td class="mt_td2">业务办理</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+												<td class="tz-td3">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m2.png"/></td>
+																<td class="mt_td2">人气产品</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+												<td class="tz-td4">
+													<table class="cell" width="100%">
+														<tbody>
+															<tr>
+																<td class="mt_td1"><img src="imgs/m3.png"/></td>
+																<td class="mt_td2">热门推荐</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="nav_two_1">
+									<a href="#">信用卡 &gt;</a>
+								</div>
+								<div class="mn_box fl mn_box1">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">信用卡申请</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">办卡进度查询</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">在线开卡
+														<span class="hot"><img src="imgs/hot.png"></span></a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">积分商城
+														<span class="hot"><img src="imgs/hot.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">账单查询</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">分期理财</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">额度调整</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">在线挂失</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="mn_box fl mn_box2">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">龙卡热购卡
+														<span><img src="imgs/new.png"></span></a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">全球支付信用卡</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">欧洲旅行信用卡</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">EMV信用卡
+														<span class="new"><img src="imgs/new.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">日本旅行信用卡</a>
+													</td>
+													<td class="m_b_td1">
+														<a href="#">更多</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="mn_box fl mn_box3">
+									<div class="m_box_info">
+										<table class="cell" width="100%">
+											<tbody>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">龙卡星期六
+														<span class="new"><img src="imgs/new.png"></span></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">家庭挚爱 月...</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">海底捞200减60</a>
+													</td>
+												</tr>
+												<tr>
+													<td class="m_b_td1">
+														<a href="#">更多特惠活动</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="mnavL_right fr">
+							  <div class="m_r_f_img2">
+									<div>
+										<a href="#"><img src="imgs/5804_1_1495002436.jpg"/></a>
+								  </div>
+							  </div>
+							</div><div class="clear"></div>
+							<div class="nm_bottom">
+								<ul>
+									<li class="bott_li bott_li_1">
+										<dl>
+											<dd><img src="imgs/b1.png"></dd>
+											<dt><a href="#">信用卡章程</a></dt>
+											<dd><img src="imgs/b2.png"></dd>
+											<dt><a href="#">还款方式</a></dt>
+											<dd><img src="imgs/b3.png"></dd>
+											<dt><a href="#">常见问题</a></dt>
+											<dd><img src="imgs/b4.png"></dd>
+											<dt><a href="#">收费标准</a></dt>
+										</dl>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="search_tow">
+			<div class="search_nav_line"></div>
+			<a href="#" class="iconfont">&#xe60c;</a>
+		</div>
+	</div><div class="clear"></div>
+</div>
+<div class="banner">
+	<div class="topbg"></div>
+	<div class="focus" style="background: #fff">
+		<div class="fpic">
+			<div class="fcon">
+				<div class="banner_pic">
+					<a href="#"></a>
+				</div>
+			</div>
+		</div>
+	</div><div class="clear"></div>
+</div>
+<div class="index_scroll" style="z-index: 9;">
+	<div class="index_scroll_left"><a href="#"></a></div>
+	<div class="index_scroll_right index_scroll_right_a_hover"><a href="#"></a></div>
+	<div class="index_scroll_box" style="height: 120px;">
+		<div class="index_scroll_main" style="left: 0px;" >
+			<ul>
+				<li class="index_scroll_li">
+					<div class="index_scroll_top">
+						<div class="index_scroll_icon"><img src="imgs/20151210112849011770.png" /></div>
+						<div class="index_srcoll_text">
+							<div class="index_scroll_title"><a href="#">账户查询</a></div>
+							<div class="index_scroll_value"><a href="#">快速查询各类账户信息</a></div>
+						</div>
+					</div>
+					<div class="index_scroll_bottom">马上查询</div>
+				</li>
+				<li class="index_scroll_li">
+					<div class="index_scroll_top">
+						<div class="index_scroll_icon"><img src="imgs/20160327025818381290.png" /></div>
+						<div class="index_srcoll_text">
+							<div class="index_scroll_title"><a href="#">悦生活</a></div>
+							<div class="index_scroll_value"><a href="#">生活缴费充值 信用卡</a></div>
+						</div>
+					</div>
+					<div class="index_scroll_bottom">马上办理</div>
+				</li>
+				<li class="index_scroll_li">
+					<div class="index_scroll_top">
+						<div class="index_scroll_icon"><img src="imgs/20151210152046089269.png" /></div>
+						<div class="index_srcoll_text">
+							<div class="index_scroll_title"><a href="#">业务申请</a></div>
+							<div class="index_scroll_value"><a href="#">信用卡、贷款快速申请</a></div>
+						</div>
+					</div>
+					<div class="index_scroll_bottom">马上申请</div>
+				</li>
+				<li class="index_scroll_li">
+					<div class="index_scroll_top">
+						<div class="index_scroll_icon"><img src="imgs/20160311111946099975.gif" /></div>
+						<div class="index_srcoll_text">
+							<div class="index_scroll_title"><a href="#">网点业务预约</a></div>
+							<div class="index_scroll_value"><a href="#">在线填单取号 网点办理</a></div>
+						</div>
+					</div>
+					<div class="index_scroll_bottom">马上愉悦</div>
+				</li>
+			</ul>
+		</div>
+	</div><div class="clear"></div>
+</div>
+<div class="vcc-index_title_box vcc-index_title_box_1">
+	<div class="vcc-index_title">
+		<span href="#" class="vcc-index_title_a">快易金融</span>
+		<div class="vcc-index_title_box2">集成资讯 产品 工具 服务，轻松选择 便捷交易</div>
+	</div><div class="clear"></div>
+</div>
+<div class="vcc-index_tab">
+	<div class="vcc-index_tab_main">
+		<ul>
+			<li class="se"><a href="#">信用卡</a></li>
+			<li><a href="#">投资理财</a></li>
+			<li><a href="#">个人贷款</a></li>
+			<li><a href="#">电子银行</a></li>
+		</ul>
+	</div><div class="clear"></div>
+</div>
+<div class="vcc-index_tab_main_div">
+	<div class="vcc-index_tab_main_div_div" style="display: block">
+		<div class="index_tab_left">
+		  <div class="index_tab_left_top">
+		    <div class="index_tab_left_top_li">
+					<div class="k1_tit"><a href="#">在线申请&gt;</a></div>
+			  <div class="k1_con">
+						<ul>
+							<li>选卡种、填资料</li>
+							<li>3分钟完成</li>
+						</ul>
+			  </div>
+		    </div>
+		    <div class="index_tab_left_top_li">
+					<div class="k1_tit"><a href="#">积分兑换&gt;</a></div>
+			  <div class="k1_con">
+						<ul>
+							<li>海量商品</li>
+							<li>随心换</li>
+						</ul>
+			  </div>
+		    </div>
+		    <div class="index_tab_left_top_li">
+					<div class="k1_tit"><a href="#">账单分期&gt;</a></div>
+			  <div class="k1_con">
+						<ul>
+							<li>账单轻松分</li>
+							<li>还款更灵活</li>
+						</ul>
+			  </div>
+		    </div>
+		    <div class="index_tab_left_top_li">
+					<div class="k1_tit"><a href="#">优惠活动&gt;</a></div>
+			  <div class="k1_con">
+						<ul>
+							<li>精选优惠</li>
+							<li>乐享无限</li>
+						</ul>
+			  </div>
+		    </div>
+		  </div>
+			<div class="index_tab_left_bottom">
+				<div class="index_tab_left_bottom">
+					<div class="index_tab_left1">
+						<div class="adsame">
+							<a href="#"><img src="imgs/5855_2.jpg" width="280" height="210" alt=""/></a>
+						</div>
+					</div>
+					<div class="index_tab_right1">
+						<div class="adsame">
+							<a href="#"><img src="imgs/8560_1_1495853830.jpg" width="280" height="210" alt=""/></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="index_tab_right">
+	    <img src="imgs/20160324171535823991.jpg"/> </div>
+	</div>
+	</div>
+<div class="vcc-index_tab_main_div">
+<div class="index_x_banner index_x_banner2">
+	<div class="index_x_banner_main">
+		<ul>
+			<li class="index_x_banner_main_title"><img src="imgs/20151206110243872975.png"/></li>
+			<li><a href="#" class="index_x_banner_main_img_left index_x_banner_main_img_left2"><img src="imgs/20160104160139064828.png"/></a>
+			<div class="index_x_banner_main_box index_x_banner_main_box2"><a href="#" class="index_x_banner_main_box_value">轻松办理信用卡</a></div></li>
+			<li>
+				<a href="#" class="index_x_banner_main_img_left index_x_banner_main_img_left2"><img src="imgs/20160104160203816757.png"/></a>
+				<div class="index_x_banner_main_box index_x_banner_main_box2"><a href="#" class="index_x_banner_main_box_value">最新优惠、热门活动随心查</a></div>
+			</li>
+			<li>
+				<a href="#" class="index_x_banner_main_img_left index_x_banner_main_img_left2"><img src="imgs/20160104160223698278.png"/></a>
+				<div class="index_x_banner_main_box index_x_banner_main_box2">
+					<a href="#" class="index_x_banner_main_box_value">账单查询、办理分期更便捷</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	</div>	
+</div>
+<div class="vcc-index_title_box vcc-index_title_box_1">
+	<div class="vcc-index_title">
+		<span href="#" class="vcc-index_title_a">悦享生活</span>
+		<div class="vcc-index_title_box2">衣食住行 物有所值，在这里实现您的生活品质</div>
+	</div><div class="clear"></div>
+</div>
+<div class="yxsh_box_main">
+  <div class="yxsh_box_main_left"><a href="#"><img src="imgs/20160325100618720146.jpg"></a></div>
+  <div class="yxsh_box_main_right">
+    <ul>
+		<li class="yxsh_icon_1">
+			<a href="#" class="yxsh_box_main_right_title" >善融商务 &gt;</a>
+			<span class="yxsh_box_main_right_text">网购新方式 正品保障 灵活支付 引领品质生活</span>
+		</li>
+		<li class="yxsh_icon_2">
+			<a href="#" class="yxsh_box_main_right_title">悦生活 &gt;</a>
+			<span class="yxsh_box_main_right_text">缴费服务覆盖全 吃喝玩乐优惠多 生活好帮手</span>
+		</li>
+		<li class="yxsh_icon_3">
+			<a href="#" class="yxsh_box_main_right_title">建行“房e通” &gt;</a>
+			<span class="yxsh_box_main_right_text">现代生活 新购房主义 精品房源 全流程服务</span>
+		</li>
+	</ul>
+  </div>
+</div>
+<div class="index_x_banner">
+  <div class="index_x_banner_main">
+    <ul>
+    <li class="index_x_banner_main_title"><img src="imgs/zhs.png"></li>
+	<li>
+	  <a href="#" class="index_x_banner_main_img_left index_x_banner_main_img_left2" ><img src="imgs/8919_1_1500965473.png"></a>
+	  <div class="index_x_banner_main_box">
+	  <a href="#">今日团购<br>狮王品牌团</a> 
+	  <span class="index_x_banner_main_box_value">全场27元起</span> 
+	  </div>
+	</li>
+
+	<li>
+	  <a href="#" class="index_x_banner_main_img_left index_x_banner_main_img_left2"><img src="imgs/8920_1_1500965629.png"></a>
+	  <div class="index_x_banner_main_box">
+	  <a href="#">大牌分期购<br>游戏狂欢</a> 
+	  <span class="index_x_banner_main_box_value">分期无忧</span> 
+	  </div>
+	</li>
+
+	<li>
+      <a href="#" class="index_x_banner_main_img_left index_x_banner_main_img_left2"><img src="imgs/5809_2_1473227861.png"></a>
+      <div class="index_x_banner_main_box">
+      <a href="#">话费打折<br>极速到账</a> 
+      <span class="index_x_banner_main_box_value">多方报价</span> 
+      </div>
+    </li>
+
+    </ul>
+  </div>
+</div>
+<div class="vcc-index_title_box vcc-index_title_box_1">
+	<div class="vcc-index_title">
+		<span href="#" class="vcc-index_title_a">优智规划</span>
+		<div class="vcc-index_title_box2">助力人生 规划未来，为您提供综合财务建议</div>
+	</div><div class="clear"></div>
+</div>
+<div class="plan-con">
+	<div class="plan-left">
+                	<div class="plan-desc fl">
+							<h2>闲钱也能增值</h2>
+							<p>钱不能“闲”，短打理收益高，“巧”能生财，两千活出两万范<br> </p>
+                        <div class="plan-btn"><a href="#" >查看详情</a></div>
+                    </div>
+                    <div class="plan-img fl"><img src="imgs/20160325094259957202.jpg"></div>
+                </div>
+	
+		<div class="plan-right">
+                	<div class="plan-desc fr">
+                       <h2>莘莘学子馆</h2>
+							<p>我是学生，拒绝平庸，梦想成长如何规划象牙塔里的金融生活<br> </p>
+                        <div class="plan-btn"><a href="#">查看详情</a></div>
+                    </div>
+                    <div class="plan-img fl"><img src="imgs/20160325094309401144.jpg"></div>
+                </div>
+</div>
+<div class="difference">
+	<a href="#"><div class="differnce_title">"心"服务 新体验</div></a>
+	<div class="button_left yes_to_go_left"></div>
+	<div class="button_right yes_to_go_right"></div>
+	<div class="difference_detail">
+		<ul >
+			<li>
+				<h2><a href="#">理财频道全新改版啦！</a></h2>
+				<p>支持在线购买理财产品，打理财富，规划人生，新版理财频道给您不一样的体验！</p>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="Announcement">
+	<div class="Announcement_main clearfix">
+		<div class="Announcement_title"><a href="#">最新公告&gt;</a></div>
+		<div class="Announcement_ul">
+			<ul>
+				<li>
+					<div class="Announcement_date">
+						<div class="Announcement_day">27</div>
+						<div class="Announcement_month">06月</div>
+					</div>
+					<div class="Announcement_text_box">
+						<div class="Announcement_text_title">
+							<a href="#">关于实施《非居民金融账户涉税信息尽...</a>
+						</div>
+						<div class="Announcement_value">
+							<span>尊敬的客户：为了履行金融账户涉税信息自动交换国际义务，规范金融机构对非居民金融账户涉税信息尽职调查行为，</span>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="Announcement_date">
+						<div class="Announcement_day">19</div>
+						<div class="Announcement_month">06月</div>
+					</div>
+					<div class="Announcement_text_box">
+						<div class="Announcement_text_title">
+							<a href="#">关于中国建设银行AC米兰足球信用卡（...</a>
+						</div>
+						<div class="Announcement_value">
+							<span>尊敬的客户：由于我行与意大利AC米兰足球俱乐部的商业合作即将到期，冠军足球信用卡——AC米兰足球信用卡（金卡、白金卡）将于2017年6月</span>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="Announcement_date">
+						<div class="Announcement_day">21</div>
+						<div class="Announcement_month">04月</div>
+					</div>
+					<div class="Announcement_text_box">
+						<div class="Announcement_text_title">
+							<a href="#">关于调整龙卡信用卡柜面渠道每卡每日...</a>
+						</div>
+						<div class="Announcement_value">
+							<span>尊敬的客户：2017年6月5日起，我行对龙卡信用卡境内柜面渠道每卡每日透支取现限额由人民币10000元提升至人民币20000元，其他取现</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div><div class="clear"></div>
+	</div>
+</div>
+<div class="footer">
+	<div class="footer_links">
+	  <div class="footer_link_main">
+			<div class="footerr_links_img">
+				<a href="#"><img src="imgs/footer_links_img_new.gif"/></a>
+		  </div>
+		  <ul>
+		  	<li><a href="#">服务价目表</a></li>
+		  	<li><a href="#">诚聘英才</a></li>
+		  	<li><a href="#">积分圆梦微公益</a></li>
+		  	<li><a href="#">网站地图</a></li>
+		  	<li><a href="#">网站声明</a></li>
+		  	<li><a href="#">友情链接 </a></li>
+		  </ul>
+		  <div class="Language_select">
+		  	<a href="#">繁体</a>&#124;
+		  	<a href="#">ENGLISH</a>
+		  </div>
+	  </div><div class="clear"></div>
+	</div>
+	<div class="copy-right">
+		<div class="copy-right_main">
+			<div class="copy-right_left">
+				<div class="copy-right_img">
+			    <img src="imgs/copy_right_img.gif"/> 
+			    </div>
+			    <div class="copy-right_text">
+			    	<span>© 版权所有中国建设银行</span>
+			    	<span>京ICP备13030780号</span>
+			    	<span>京公网安备：110102000450</span>
+			    	<br>
+			    	<span>总行地址：中国北京西城区金融大街25号</span>
+			    	<span>邮编：100033</span>
+			    	<span>手机网站：m.ccb.com</span>
+			    </div>
+			</div>
+			<div class="copy-right_right">
+				<ul>
+					<li><img src="imgs/wb.382411751461452652833.jpg" />官方微博</li>
+					<li><img src="imgs/weixin.382411751461452652852.jpg" />微信银行</li>
+					<li><img src="imgs/sj.jpg" />手机银行</li>
+				</ul>
+			</div><div class="clear"></div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
